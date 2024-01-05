@@ -1,0 +1,28 @@
+.
+├── README.md
+├── index.html
+├── package-lock.json
+├── package.json
+├── public
+│   └── vite.svg
+├── src
+│   ├── App.tsx
+│   ├── components
+│   │   ├── hocs
+│   │   ├── pages
+│   │   ├── styles
+│   │   └── ui
+│   ├── env.d.ts
+│   ├── main.tsx
+│   ├── redux
+│   │   └── slices
+│   │       ├── posts
+│   │       └── user
+│   ├── types
+│   └── vite-env.d.ts
+├── trees_project.txt
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+
+13 directories, 13 files

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-function MainPage() {
-  return (
-    <div>MainPage</div>
-  )
+function MainPage(): JSX.Element {
+  return <div>MainPage</div>;
 }
 
-export default MainPage
+export default MainPage;

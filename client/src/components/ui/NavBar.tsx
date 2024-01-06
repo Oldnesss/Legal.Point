@@ -61,7 +61,7 @@ function NavBar(): JSX.Element {
         justify="space-between"
         padding="1rem"
         // bgColor="transparent"
-        position="fixed"
+        // position="fixed"
         top="0"
         left="0"
         right="0"

@@ -19,7 +19,12 @@ function MainPage(): JSX.Element {
       <Box
         bg="url('/banner4.webp') center/cover no-repeat"
         h="100vh"
-        position="relative"
+        // position="relative"
+        position="absolute"
+        top="0"
+        left="0"
+        right="0"
+        zIndex="-1"
       >
         <Box
           position="absolute"
@@ -31,13 +36,13 @@ function MainPage(): JSX.Element {
           <Link as={ReactRouterLink} to="/firms"> 
           
           <Heading fontSize="4xl" color="white" mb="4">
-            Привет, мы здесь, чтобы помочь!
+            ПРИВЕТ, МЫ ЗДЕСЬ, ЧТОБЫ ПОМОЧЬ!
           </Heading>
           <Text color="white" fontSize="xl" mb="6">
-            Интерактивные услуги и многое другое...
+            продажа и покупка компаний, юридические услуги и многое другое...
           </Text>
           <Button colorScheme="orange" size="lg">
-            Посмотреть фирмы
+            ПОСМОТРЕТЬ ФИРМЫ
           </Button>
           </Link>
         </Box>
@@ -54,11 +59,11 @@ function MainPage(): JSX.Element {
             colorScheme="orange"
             _hover={{ bg: 'orange.400', color: 'white' }}
           >
-            Посмотреть фирмы
+            УСЛУГИ И ТАРИФЫ
           </Button>
         </Link>
       </Flex>
-
+      <Spacer />
       {/* Второй экран с каруселью и контактной информацией */}
       <Container maxW="1280px">
         <Heading mt="8" mb="4">

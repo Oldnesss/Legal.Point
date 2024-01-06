@@ -61,18 +61,18 @@ function NavBar(): JSX.Element {
         justify="space-between"
         padding="1rem"
         // bgColor="transparent"
-        position="fixed"
+        // position="fixed"
         top="0"
         left="0"
         right="0"
         // bg={isScrolled ? 'rgba(255, 255, 255, 0.2)' : 'transparent'}
         // boxShadow={isScrolled ? '0px 4px 6px rgba(0, 0, 0, 0.1)' : 'none'}
         // transition="background-color 0.3s, box-shadow 0.3s"
-        backdropFilter="blur(50px)"
+        // backdropFilter="blur(50px)"
         transform={isScrolled ? 'translateY(-100%)' : 'none'}
         // bg="#000000"
         transition="transform 0.4s"
-        zIndex="1"
+        // zIndex="1"
       >
         {/* Логотип */}
         <Link href="/">
@@ -177,7 +177,7 @@ function NavBar(): JSX.Element {
           onClose={handleDrawerToggle}
         >
           <DrawerOverlay
-            bg="rgba(0, 0, 0, 0.1)" // Прозрачный цвет для оверлея
+            // bg="rgba(0, 0, 0, 0.1)" // Прозрачный цвет для оверлея
             position="fixed"
             top="0"
             left="0"
@@ -230,7 +230,7 @@ function NavBar(): JSX.Element {
                   />
                 </HStack>
 
-                {/* <ThemeSwitch /> */}
+                <ThemeSwitch />
               </VStack>
               {/* <Link href="#">поиск</Link> */}
             </DrawerBody>

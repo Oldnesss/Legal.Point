@@ -18,7 +18,14 @@ type FirmTypeProps = {
 function FirmCard({ firm }: FirmTypeProps): JSX.Element {
   return (
     // <Box borderWidth="1px" borderRadius="md" overflow="hidden">
-    <Card maxW="sm" width="350px" height="500px" className="card" mb={10}>
+    <Card
+      maxW="sm"
+      width="350px"
+      height="500px"
+      className="card"
+      mb={10}
+      bg="rgba(255, 255, 255, 0.2)"
+    >
       <CardBody>
         <Box p={8} align="center">
           <Image

@@ -11,6 +11,7 @@ import {
   Link,
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
+import FirmsPage from './FirmsPage';
 
 function MainPage(): JSX.Element {
   return (
@@ -19,8 +20,8 @@ function MainPage(): JSX.Element {
       <Box
         bg="url('/banner4.webp') center/cover no-repeat"
         h="100vh"
-        // position="relative"
-        position="absolute"
+        position="relative"
+        // position="absolute"
         top="0"
         left="0"
         right="0"
@@ -36,13 +37,13 @@ function MainPage(): JSX.Element {
           <Link as={ReactRouterLink} to="/firms"> 
           
           <Heading fontSize="4xl" color="white" mb="4">
-            ПРИВЕТ, МЫ ЗДЕСЬ, ЧТОБЫ ПОМОЧЬ!
+            Привет, мы здесь, чтобы помочь!
           </Heading>
           <Text color="white" fontSize="xl" mb="6">
-            продажа и покупка компаний, юридические услуги и многое другое...
+            Интерактивные услуги и многое другое...
           </Text>
           <Button colorScheme="orange" size="lg">
-            ПОСМОТРЕТЬ ФИРМЫ
+            Посмотреть фирмы
           </Button>
           </Link>
         </Box>
@@ -54,16 +55,17 @@ function MainPage(): JSX.Element {
         {/* Логотип и другие элементы */}
         <Spacer />
         <Link as={ReactRouterLink} to="/services">
+
           <Button
             variant="outline"
             colorScheme="orange"
             _hover={{ bg: 'orange.400', color: 'white' }}
           >
-            УСЛУГИ И ТАРИФЫ
+            Посмотреть фирмы
           </Button>
         </Link>
       </Flex>
-      <Spacer />
+
       {/* Второй экран с каруселью и контактной информацией */}
       <Container maxW="1280px">
         <Heading mt="8" mb="4">

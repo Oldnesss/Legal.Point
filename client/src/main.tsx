@@ -6,6 +6,7 @@ import App from './App';
 import { store } from './redux/store';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  
   <BrowserRouter>
     <Provider store={store}>
       <App />

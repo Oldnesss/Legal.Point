@@ -14,7 +14,6 @@ function App(): JSX.Element {
         <Route path="/" element={<MainPage />} />
         <Route path="/firms" element={<FirmsPage />} />
         <Route path="/service" element={<ServicePage />} />
-
         <Route />
       </Routes>
     </ChakraProvider>

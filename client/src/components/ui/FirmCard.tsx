@@ -24,7 +24,7 @@ function FirmCard({ firm }: FirmTypeProps): JSX.Element {
       height="500px"
       className="card"
       mb={10}
-      bg="rgba(255, 255, 255, 0.2)"
+      bg="rgba(255, 255, 255, 0.1)"
     >
       <CardBody>
         <Box p={8} align="center">

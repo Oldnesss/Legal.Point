@@ -54,30 +54,27 @@ function NavBar(): JSX.Element {
   };
 
   return (
-    <div className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <div className="navbar">
       <Flex
         as="nav"
         align="center"
         justify="space-between"
         padding="1rem"
-        // bgColor="transparent"
-        // position="fixed"
+        transition="transform 0.4s"
+        borderBottom={isScrolled ? '1px solid' : 'none'}  // Условное применение border
+        borderColor={colorMode === 'dark' ? 'gray.700' : 'gray.200'}
+        position="fixed"
+        width="100%"
         top="0"
         left="0"
-        right="0"
-        // bg={isScrolled ? 'rgba(255, 255, 255, 0.2)' : 'transparent'}
-        // boxShadow={isScrolled ? '0px 4px 6px rgba(0, 0, 0, 0.1)' : 'none'}
-        // transition="background-color 0.3s, box-shadow 0.3s"
-        // backdropFilter="blur(50px)"
-        transform={isScrolled ? 'translateY(-100%)' : 'none'}
-        // bg="#000000"
-        transition="transform 0.4s"
-        // zIndex="1"
+        zIndex="1000"
+        transform={isScrolled ? 'translateY(0)' : 'none'}  // Условное применение transform
+        backgroundColor={colorMode === 'dark' ? 'gray.800' : 'white'}  // Цвет фона
       >
         {/* Логотип */}
         <Link href="/">
           <Image
-            src={colorMode === 'dark' ? '/Legal.Point.png' : '/LEGAL•POINT.png'}
+            src={colorMode === 'dark' ? '/Legal.Point.png' : '/Legal.Point.png'}
             alt="logo"
             w={300}
           />
@@ -88,16 +85,85 @@ function NavBar(): JSX.Element {
         <div className="navbar4ik">
           <Flex align="center" justify="center" flex="1">
             <Box display={['none', 'none', 'flex']} gap="1rem">
-              <ChakraLink as={ReactRouterLink} to="/">
+              <ChakraLink
+                as={ReactRouterLink}
+                to="/"
+                fontSize="md"
+                px={5}
+                py={2}
+                rounded="md"
+                _hover={{
+                  textDecoration: 'none',
+                  border: '2px solid',
+                  borderColor: 'orange.500',
+                }}
+                _active={{
+                  textDecoration: 'none',
+                  border: '2px solid',
+                  borderColor: 'yellow.300',
+                }}
+                
+              >
                 ГЛАВНАЯ
               </ChakraLink>
-              <ChakraLink as={ReactRouterLink} to="/firms">
+              <ChakraLink
+                as={ReactRouterLink}
+                to="/firms"
+                fontSize="md"
+                px={5}
+                py={2}
+                rounded="md"
+                _hover={{
+                  textDecoration: 'none',
+                  border: '2px solid',
+                  borderColor: 'orange.500',
+                }}
+                _active={{
+                  textDecoration: 'none',
+                  border: '2px solid',
+                  borderColor: 'yellow.300',
+                }}
+              >
                 КАТАЛОГ
               </ChakraLink>
-              <ChakraLink as={ReactRouterLink} to="/service">
+              <ChakraLink
+                as={ReactRouterLink}
+                to="/service"
+                fontSize="md"
+                px={5}
+                py={2}
+                rounded="md"
+                _hover={{
+                  textDecoration: 'none',
+                  border: '2px solid',
+                  borderColor: 'orange.500',
+                }}
+                _active={{
+                  textDecoration: 'none',
+                  border: '2px solid',
+                  borderColor: 'yellow.300',
+                }}
+              >
                 УСЛУГИ
               </ChakraLink>
-              <ChakraLink as={ReactRouterLink} to="/contact">
+              <ChakraLink
+                as={ReactRouterLink}
+                to="/contact"
+                fontSize="md"
+                px={5}
+                py={2}
+                rounded="md"
+                _hover={{
+                  textDecoration: 'none',
+                  border: '2px solid',
+                  borderColor: 'orange.500',
+                }}
+                _active={{
+                  textDecoration: 'none',
+                  border: '2px solid',
+                  borderColor: 'yellow.300',
+                }}
+              >
                 КОНТАКТЫ
               </ChakraLink>
 
@@ -189,16 +255,24 @@ function NavBar(): JSX.Element {
             <DrawerHeader />
             <DrawerBody>
               <VStack spacing="4">
-                <ChakraLink as={ReactRouterLink} to="/">
+                <ChakraLink
+                  as={ReactRouterLink}
+                  to="/"
+                  _hover={{ textDecoration: 'none' }}
+                >
                   ГЛАВНАЯ
                 </ChakraLink>
-                <ChakraLink as={ReactRouterLink} to="/firms">
+                <ChakraLink
+                  as={ReactRouterLink}
+                  to="/firms"
+                  _hover={{ textDecoration: 'none' }}
+                >
                   КАТАЛОГ
                 </ChakraLink>
-                <ChakraLink as={ReactRouterLink} to="/service">
+                <ChakraLink as={ReactRouterLink} to="/service" _hover={{ textDecoration: 'none' }}>
                   УСЛУГИ
                 </ChakraLink>
-                <ChakraLink as={ReactRouterLink} to="/contact">
+                <ChakraLink as={ReactRouterLink} to="/contact"_hover={{ textDecoration: 'none' }}>
                   КОНТАКТЫ
                 </ChakraLink>
 

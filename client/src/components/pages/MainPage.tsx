@@ -11,7 +11,7 @@ import {
   Link,
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import FirmsPage from './FirmsPage';
+
 
 function MainPage(): JSX.Element {
   return (
@@ -20,12 +20,12 @@ function MainPage(): JSX.Element {
       <Box
         bg="url('/banner4.webp') center/cover no-repeat"
         h="100vh"
-        position="relative"
-        // position="absolute"
+        // position="relative"
+        // // position="absolute"
         top="0"
         left="0"
         right="0"
-        zIndex="-1"
+        // zIndex="-1"
       >
         <Box
           position="absolute"
@@ -67,13 +67,13 @@ function MainPage(): JSX.Element {
       </Flex>
 
       {/* Второй экран с каруселью и контактной информацией */}
-      <Container maxW="1280px">
+      {/* <Container maxW="1280px"> */}
         <Heading mt="8" mb="4">
           Сейчас в продаже
         </Heading>
         {/* Компонент с каруселью фирм в продаже */}
         {/* Другие элементы UI, такие как контактная информация и кнопка для получения консультации */}
-      </Container>
+      {/* </Container> */}
     </>
   );
 }

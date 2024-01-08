@@ -11,7 +11,7 @@ function FirmList(): JSX.Element {
     void dispatch(thunkGetFirm());
   }, []);
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '15px' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '15px', marginTop: '100px'}}>
       {firms.map((firm) => (
         <FirmCard key={firm.id} firm={firm} />
       ))}

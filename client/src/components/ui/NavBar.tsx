@@ -251,7 +251,7 @@ function NavBar(): JSX.Element {
             right="0"
             bottom="0"
           />
-          <DrawerContent bg="transparent" backdropFilter="blur(50px)">
+          <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader />
             <DrawerBody>

@@ -46,11 +46,11 @@ function NavBar(): JSX.Element {
   };
 
   const handleTelegramClick = (): void => {
-    window.location.href = 'https://t.me/';
+    window.open('https://t.me/Ilya_Oldness');
   };
 
   const handleWhatsappClick = (): void => {
-    window.location.href = 'https://wa.me/';
+    window.open('https://wa.me/');
   };
 
   return (
@@ -285,7 +285,7 @@ function NavBar(): JSX.Element {
                   КОНТАКТЫ
                 </ChakraLink>
 
-                <HStack spacing="4">
+                <HStack spacing="2">
                   <IconButton
                     icon={<FaWhatsapp />}
                     aria-label="WhatsApp"

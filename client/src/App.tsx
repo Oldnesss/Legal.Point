@@ -6,6 +6,7 @@ import MainPage from './components/pages/MainPage';
 import FirmsPage from './components/pages/FirmsPage';
 import ServicePage from './components/pages/ServicePage';
 import ContactPage from './components/pages/ContactPage';
+import Footer from './components/ui/Footer';
 
 function App(): JSX.Element {
   return (
@@ -17,6 +18,7 @@ function App(): JSX.Element {
         <Route path="/service" element={<ServicePage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

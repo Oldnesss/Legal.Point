@@ -17,7 +17,7 @@ import { Link as ReactRouterLink } from 'react-router-dom';
 
 function ServicePage(): JSX.Element {
   return (
-    <Box maxW="600px" mx="auto" mt="40">
+    <Box maxW="600px" mx="auto" mt="40" mb='100px'>
       <Accordion allowToggle allowMultiple>
         <Box flex="1" textAlign="center" fontWeight="bold" mb="40px">
           УСЛУГИ И ТАРИФЫ

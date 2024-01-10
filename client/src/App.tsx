@@ -10,15 +10,21 @@ import Footer from './components/ui/Footer';
 
 function App(): JSX.Element {
   return (
-    <div className="container mx-auto mb-10">
+    <div className="wrapper">
       <NavBar />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/firms" element={<FirmsPage />} />
-        <Route path="/service" element={<ServicePage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-      <Footer />
+      {/* <div className="main"> */}
+        {/* <div className="container"> */}
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/firms" element={<FirmsPage />} />
+            <Route path="/service" element={<ServicePage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        {/* </div> */}
+      {/* </div> */}
+      {/* <div className="footer"> */}
+        <Footer />
+      {/* </div> */}
     </div>
   );
 }

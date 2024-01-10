@@ -29,7 +29,7 @@ function NavBar(): JSX.Element {
   const { colorMode } = useColorMode();
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 0);
     };
@@ -200,7 +200,7 @@ function NavBar(): JSX.Element {
       </InputGroup> */}
 
         <Spacer />
-        {/* <ThemeSwitch /> */}
+        <ThemeSwitch />
         <Spacer />
 
         <IconButton

@@ -12,7 +12,6 @@ import {
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
-
 function MainPage(): JSX.Element {
   return (
     <>
@@ -34,17 +33,16 @@ function MainPage(): JSX.Element {
           transform="translate(-50%, -50%)"
           textAlign="center"
         >
-          <Link as={ReactRouterLink} to="/firms"> 
-          
-          <Heading fontSize="4xl" color="white" mb="4">
-            Привет, мы здесь, чтобы помочь!
-          </Heading>
-          <Text color="white" fontSize="xl" mb="6">
-            Интерактивные услуги и многое другое...
-          </Text>
-          <Button colorScheme="orange" size="lg">
-            Посмотреть фирмы
-          </Button>
+          <Link as={ReactRouterLink} to="/firms">
+            <Heading fontSize="4xl" color="white" mb="4">
+              Привет, мы здесь, чтобы помочь!
+            </Heading>
+            <Text color="white" fontSize="xl" mb="6">
+              Интерактивные услуги и многое другое...
+            </Text>
+            <Button colorScheme="orange" size="lg">
+              Посмотреть фирмы
+            </Button>
           </Link>
         </Box>
         {/* Дополнительные элементы UI, такие как прозрачная подложка, кнопки с надписями и анимации */}
@@ -55,7 +53,6 @@ function MainPage(): JSX.Element {
         {/* Логотип и другие элементы */}
         <Spacer />
         <Link as={ReactRouterLink} to="/services">
-
           <Button
             variant="outline"
             colorScheme="orange"
@@ -68,11 +65,11 @@ function MainPage(): JSX.Element {
 
       {/* Второй экран с каруселью и контактной информацией */}
       {/* <Container maxW="1280px"> */}
-        <Heading mt="8" mb="4">
-          Сейчас в продаже
-        </Heading>
-        {/* Компонент с каруселью фирм в продаже */}
-        {/* Другие элементы UI, такие как контактная информация и кнопка для получения консультации */}
+      <Heading mt="8" mb="4">
+        Сейчас в продаже
+      </Heading>
+      {/* Компонент с каруселью фирм в продаже */}
+      {/* Другие элементы UI, такие как контактная информация и кнопка для получения консультации */}
       {/* </Container> */}
     </>
   );

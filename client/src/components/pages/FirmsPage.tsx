@@ -6,7 +6,7 @@ import Banner from '../ui/Banner';
 
 function FirmsPage(): JSX.Element {
   return (
-    <Box
+    <Box 
 
     >
       {/* <NavBar /> */}

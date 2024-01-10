@@ -1,0 +1,14 @@
+.container {
+  max-width: 1980px;
+  margin: 0 auto;
+  padding: 0 30px;
+  /* min-height: 100vh */
+}
+
+.main {
+  /* flex: 1 1 auto; */
+}
+
+.footer {
+  margin-top: auto;
+}

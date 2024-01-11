@@ -16,11 +16,11 @@ function Footer(): JSX.Element {
   const { colorMode } = useColorMode();
   return (
     <Box
+      className="footer"
       as="footer"
-      mt="auto"
+      // mt="auto"
       py="4"
       backgroundColor={colorMode === 'dark' ? 'gray.800' : 'white'}
-      
     >
       <Flex
         display="flex"

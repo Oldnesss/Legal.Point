@@ -2,7 +2,7 @@
   max-width: 1980px;
   margin: 0 auto;
   padding: 0 30px;
-  min-width: 100%;
+  /* min-width: 100%; */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -15,6 +15,9 @@
 
 .footer {
   margin-top: auto;
+  width: 100%;
+  gap: 5px;
+
 }
 
 

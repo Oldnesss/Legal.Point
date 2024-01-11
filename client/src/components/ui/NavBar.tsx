@@ -17,9 +17,10 @@ import {
   Link as ChakraLink,
   Button,
   HStack,
+  Icon,
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { FaTelegram, FaWhatsapp } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaTelegram, FaTelegramPlane, FaWhatsapp, FaWhatsappSquare } from 'react-icons/fa';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import ThemeSwitch from './ThemeSwitch';
 
@@ -82,8 +83,8 @@ function NavBar(): JSX.Element {
         <Spacer />
 
         {/* Навигационные ссылки */}
-        <div className="navbar4ik">
-          <Flex align="center" justify="center" flex="1">
+        <div className="navbar4ik" >
+          <Flex align="center" justify="center" flex="1"  >
             <Box display={['none', 'none', 'flex']} gap="1rem">
               <ChakraLink
                 as={ReactRouterLink}
@@ -251,10 +252,10 @@ function NavBar(): JSX.Element {
             right="0"
             bottom="0"
           />
-          <DrawerContent>
+          <DrawerContent >
             <DrawerCloseButton />
             <DrawerHeader />
-            <DrawerBody>
+            <DrawerBody marginTop="300px">
               <VStack spacing="4">
                 <ChakraLink
                   as={ReactRouterLink}
@@ -286,32 +287,84 @@ function NavBar(): JSX.Element {
                 </ChakraLink>
 
                 <HStack spacing="2">
-                  <IconButton
-                    icon={<FaWhatsapp />}
-                    aria-label="WhatsApp"
-                    display={['block', 'block', 'none']}
-                    fontSize="32px"
-                    colorScheme="green"
-                    variant="ghost"
-                    onClick={handleWhatsappClick}
-                    _hover={{
-                      bg: 'transparent', // Устанавливаем фон при наведении на прозрачный
-                    }}
-                  />
+              {/* Telegram */}
+              <Link href="https://t.me/" isExternal>
+                <IconButton
+                  aria-label="Telegram"
+                  icon={
+                    <Icon
+                      as={FaTelegramPlane as React.ElementType}
+                      boxSize="4"
+                      color="gray.500"
+                      _hover={{
+                        textDecoration: 'none',
+                        color: colorMode === 'light' ? 'orange' : '#fcd28d',
+                      }}
+                    />
+                  }
+                  colorScheme="gray"
+                  variant="outline"
+                />
+              </Link>
 
-                  <IconButton
-                    icon={<FaTelegram />}
-                    aria-label="Telegram"
-                    display={['block', 'block', 'none']}
-                    fontSize="32px"
-                    colorScheme="blue"
-                    variant="ghost"
-                    onClick={handleTelegramClick}
+              {/* WhatsApp */}
+              <Link href="https://wa.me/" isExternal>
+                <IconButton
+                  aria-label="WhatsApp"
+                  icon={
+                    <Icon
+                      as={FaWhatsapp}
+                      boxSize="4"
+                      color="gray.500"
+                      _hover={{
+                        textDecoration: 'none',
+                        color: colorMode === 'light' ? 'orange' : '#fcd28d',
+                      }}
+                    />
+                  }
+                  colorScheme="gray"
+                  variant="outline"
+                />
+              </Link>
+
+              {/* Email */}
+              <Link href="mailto:info@legal.point" isExternal>
+                <IconButton
+                  aria-label="Email"
+                  icon={
+                    <Icon
+                      as={FaEnvelope}
+                      boxSize="4"
+                      color="gray.500"
+                      _hover={{
+                        textDecoration: 'none',
+                        color: colorMode === 'light' ? 'orange' : '#fcd28d',
+                      }}
+                    />
+                  }
+                  colorScheme="gray"
+                  variant="outline"
+                />
+              </Link>
+
+              {/* Phone */}
+              <IconButton
+                aria-label="Phone"
+                icon={
+                  <Icon
+                    as={FaPhone}
+                    boxSize="4"
+                    color="gray.500"
                     _hover={{
-                      bg: 'transparent', // Устанавливаем фон при наведении на прозрачный
+                      textDecoration: 'none',
+                      color: colorMode === 'light' ? 'orange' : '#fcd28d',
                     }}
                   />
-                </HStack>
+                }
+                colorScheme="gray"
+                variant="outline"
+              />
+            </HStack>
 
                 <ThemeSwitch />
               </VStack>

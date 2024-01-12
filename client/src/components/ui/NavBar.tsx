@@ -26,7 +26,7 @@ import {
   FaTelegram,
   FaTelegramPlane,
   FaWhatsapp,
-  FaWhatsappSquare,
+
 } from 'react-icons/fa';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import ThemeSwitch from './ThemeSwitch';

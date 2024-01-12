@@ -150,6 +150,9 @@ function Footer(): JSX.Element {
                   }
                   colorScheme="gray"
                   variant="outline"
+                  onClick={() => {
+                    window.location.href = 'mailto:info@legal.point';
+                  }}
                 />
               </Link>
 
@@ -169,6 +172,9 @@ function Footer(): JSX.Element {
                 }
                 colorScheme="gray"
                 variant="outline"
+                onClick={() => {
+                  window.location.href = 'tel:+79175131735';
+                }}
               />
             </HStack>
           </Flex>

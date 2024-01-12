@@ -35,7 +35,6 @@ function ContactPage(): JSX.Element {
         <Text fontSize="lg" fontWeight="bold">
           ПИШИТЕ на e-mail: info@legal.point
         </Text>
-        
 
         <HStack spacing="2">
           {/* Telegram */}
@@ -65,6 +64,9 @@ function ContactPage(): JSX.Element {
               icon={<Icon as={FaEnvelope} boxSize="6" />}
               colorScheme="orange"
               variant="outline"
+              onClick={() => {
+                window.location.href = 'mailto:info@legal.point';
+              }}
             />
           </Link>
 
@@ -74,10 +76,13 @@ function ContactPage(): JSX.Element {
             icon={<Icon as={FaPhone} boxSize="6" />}
             colorScheme="orange"
             variant="outline"
+            onClick={() => {
+              window.location.href = 'tel:+79175131735';
+            }}
           />
         </HStack>
 
-        <ChakraLink as={ReactRouterLink} to="/form"> 
+        <ChakraLink as={ReactRouterLink} to="/form">
           <Button colorScheme="orange" variant="solid">
             ЗАКАЗАТЬ УСЛУГУ ПРЯМО СЕЙЧАС
           </Button>

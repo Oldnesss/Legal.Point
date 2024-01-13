@@ -15,7 +15,7 @@ function VideoBanner(): JSX.Element {
   const { colorMode } = useColorMode();
 
   return (
-    <Box position="relative">
+    <Box position="relative" mt='100px' >
       {/* Видео в качестве фона */}
       <Box
         position="absolute"
@@ -32,7 +32,7 @@ function VideoBanner(): JSX.Element {
           muted
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         >
-          <source src="/public/video4.mp4" type="video/mp4" />
+          <source src="/public/video2.mp4" type="video/mp4" />
           {/* Добавьте другие форматы видео для кросс-браузерной совместимости */}
         </video>
       </Box>
@@ -63,6 +63,8 @@ function VideoBanner(): JSX.Element {
           height="100vh"
           color="white"
           zIndex="1"
+          
+          
         >
           <Heading
             as="h1"
@@ -72,7 +74,7 @@ function VideoBanner(): JSX.Element {
           >
             Привет, мы здесь, чтобы помочь!
           </Heading>
-          <Text color="white" fontSize="xl" mb="6">
+          <Text color="white" fontSize="xl" mb="6" p='30px' >
             Юридическое сопровождение и многое другое...
           </Text>
           <Button colorScheme="orange" size="lg" mt={4}>

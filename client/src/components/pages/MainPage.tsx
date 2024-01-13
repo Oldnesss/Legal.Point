@@ -11,13 +11,14 @@ import {
   Link,
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
+import VideoBanner from '../ui/videoBanner';
 
 function MainPage(): JSX.Element {
   return (
     <>
       {/* Экран с баннером */}
       <Box
-        bg="url('/banner4.webp') center/cover no-repeat"
+        // bg="url('/banner4.webp') center/cover no-repeat"
         h="100vh"
         // position="relative"
         // // position="absolute"
@@ -26,6 +27,7 @@ function MainPage(): JSX.Element {
         right="0"
         // zIndex="-1"
       >
+        <VideoBanner />
         <Box
           position="absolute"
           top="50%"
@@ -33,7 +35,7 @@ function MainPage(): JSX.Element {
           transform="translate(-50%, -50%)"
           textAlign="center"
         >
-          <Link as={ReactRouterLink} to="/firms">
+          {/* <Link as={ReactRouterLink} to="/firms">
             <Heading fontSize="4xl" color="white" mb="4">
               Привет, мы здесь, чтобы помочь!
             </Heading>
@@ -43,7 +45,7 @@ function MainPage(): JSX.Element {
             <Button colorScheme="orange" size="lg">
               Посмотреть фирмы
             </Button>
-          </Link>
+          </Link> */}
         </Box>
         {/* Дополнительные элементы UI, такие как прозрачная подложка, кнопки с надписями и анимации */}
       </Box>
@@ -52,7 +54,15 @@ function MainPage(): JSX.Element {
       <Flex align="center" justify="space-between" padding="1rem">
         {/* Логотип и другие элементы */}
         <Spacer />
-        <Link as={ReactRouterLink} to="/services">
+        
+      </Flex>
+
+      {/* Второй экран с каруселью и контактной информацией */}
+      {/* <Container maxW="1280px"> */}
+      <Heading mt="8" mb="4">
+        Сейчас в продаже
+      </Heading>
+      <Link as={ReactRouterLink} to="/services">
           <Button
             variant="outline"
             colorScheme="orange"
@@ -61,13 +71,6 @@ function MainPage(): JSX.Element {
             Посмотреть фирмы
           </Button>
         </Link>
-      </Flex>
-
-      {/* Второй экран с каруселью и контактной информацией */}
-      {/* <Container maxW="1280px"> */}
-      <Heading mt="8" mb="4">
-        Сейчас в продаже
-      </Heading>
       {/* Компонент с каруселью фирм в продаже */}
       {/* Другие элементы UI, такие как контактная информация и кнопка для получения консультации */}
       {/* </Container> */}

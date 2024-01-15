@@ -1,8 +1,8 @@
-
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import FirmCard from './FirmCard';
 import { thunkGetFirm } from '../../redux/slices/posts/postThunk';
+import Carousel from './Carousel1';
 
 function FirmList(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -11,7 +11,15 @@ function FirmList(): JSX.Element {
     void dispatch(thunkGetFirm());
   }, []);
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '15px', marginTop: '100px'}}>
+    <div
+      style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        gap: '15px',
+        marginTop: '100px',
+      }}
+    >
       {firms.map((firm) => (
         <FirmCard key={firm.id} firm={firm} />
       ))}

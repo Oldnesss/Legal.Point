@@ -15,9 +15,10 @@ function VideoBanner(): JSX.Element {
   const { colorMode } = useColorMode();
 
   return (
-    <Box position="relative" mt='100px' >
+    <Box position="relative" mt="100px">
       {/* Видео в качестве фона */}
       <Box
+        bg="url('/banner.webp') center/cover no-repeat"
         position="absolute"
         top="0"
         left="0"
@@ -32,7 +33,7 @@ function VideoBanner(): JSX.Element {
           muted
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         >
-          <source src="/public/video2.mp4" type="video/mp4" />
+          <source src="/video2.mp4" type="video/mp4" />
           {/* Добавьте другие форматы видео для кросс-браузерной совместимости */}
         </video>
       </Box>
@@ -63,21 +64,40 @@ function VideoBanner(): JSX.Element {
           height="100vh"
           color="white"
           zIndex="1"
-          
-          
         >
           <Heading
             as="h1"
-            fontSize={{ base: '2xl', md: '4xl', lg: '6xl' }}
+            fontSize={{ base: '3xl', md: '4xl', lg: '6xl' }}
             textAlign="center"
             mb="6"
           >
             Привет, мы здесь, чтобы помочь!
           </Heading>
-          <Text color="white" fontSize="xl" mb="6" p='30px' >
+
+          <Text
+            color="white"
+            fontSize={{ base: 'sm', md: 'md', lg: '2xl' }}
+            mb="6"
+            p="30px"
+          >
             Юридическое сопровождение и многое другое...
           </Text>
-          <Button colorScheme="orange" size="lg" mt={4}>
+          <Button
+            colorScheme="orange"
+            size={{ base: 'sm', md: 'md', lg: 'lg' }}
+            mt={4}
+            // _focus={{
+            //   content: '""',
+            //   position: 'absolute',
+            //   top: '0',
+            //   left: '0',
+            //   width: '200%',
+            //   height: '100%',
+            //   background:
+            //     'linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b)',
+            //   backgroundSize: '50% 100%',
+            // }}
+          >
             НАШИ УСЛУГИ
           </Button>
         </Flex>

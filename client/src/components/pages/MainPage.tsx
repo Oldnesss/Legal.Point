@@ -11,7 +11,8 @@ import {
   Link,
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import VideoBanner from '../ui/videoBanner';
+import VideoBanner from '../ui/VideoBanner';
+import Carousel from '../ui/Carousel/Carousel';
 
 function MainPage(): JSX.Element {
   return (
@@ -54,7 +55,6 @@ function MainPage(): JSX.Element {
       <Flex align="center" justify="space-between" padding="1rem">
         {/* Логотип и другие элементы */}
         <Spacer />
-        
       </Flex>
 
       {/* Второй экран с каруселью и контактной информацией */}
@@ -62,15 +62,18 @@ function MainPage(): JSX.Element {
       <Heading mt="8" mb="4">
         Сейчас в продаже
       </Heading>
+      <Carousel />
+
       <Link as={ReactRouterLink} to="/services">
-          <Button
-            variant="outline"
-            colorScheme="orange"
-            _hover={{ bg: 'orange.400', color: 'white' }}
-          >
-            Посмотреть фирмы
-          </Button>
-        </Link>
+        <Button
+          variant="outline"
+          colorScheme="orange"
+          _hover={{ bg: 'orange.400', color: 'white' }}
+        >
+          Посмотреть фирмы
+        </Button>
+      </Link>
+
       {/* Компонент с каруселью фирм в продаже */}
       {/* Другие элементы UI, такие как контактная информация и кнопка для получения консультации */}
       {/* </Container> */}

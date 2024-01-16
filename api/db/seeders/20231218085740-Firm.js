@@ -10,7 +10,7 @@ module.exports = {
     for (let i = 1; i <= 20; i++) {
       firmData.push({
         name: faker.company.name(),
-        image: faker.image.avatar(),
+        image: faker.image.urlPicsumPhotos(),
         title: faker.company.name(),
         description: faker.company.catchPhrase(),
         body: faker.company.catchPhraseDescriptor(),

@@ -104,10 +104,10 @@ body {
   border: none;
 }
 
-.button-group button {
+/* .button-group button {
   background-color: #060606;
   color: #e5e5e5;
-}
+} */
 
 .button-group button:hover {
   cursor: pointer;

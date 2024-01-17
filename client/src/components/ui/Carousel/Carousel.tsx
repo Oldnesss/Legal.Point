@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons';
+import { ArrowForwardIcon, ArrowBackIcon, ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { Box, Button, Center } from '@chakra-ui/react';
 import { useAppSelector } from '../../../redux/hooks';
 
@@ -50,7 +50,7 @@ function Carousel(): JSX.Element {
           disabled={activeIndex === 0}
           onClick={() => setActiveIndex(prevIndex)}
         >
-          Prev
+          <ChevronLeftIcon />
         </Button>
 
         <Button
@@ -60,7 +60,7 @@ function Carousel(): JSX.Element {
           disabled={activeIndex === firms.length - 1}
           onClick={() => setActiveIndex(nextIndex)}
         >
-          Next
+          <ChevronRightIcon />
         </Button>
       </Center>
     </>

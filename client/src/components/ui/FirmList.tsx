@@ -1,15 +1,10 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { useAppSelector } from '../../redux/hooks';
 import FirmCard from './FirmCard';
-import { thunkGetFirm } from '../../redux/slices/posts/postThunk';
-import Carousel from './Carousel1';
 
 function FirmList(): JSX.Element {
-  const dispatch = useAppDispatch();
   const firms = useAppSelector((store) => store.firmSlice.firms);
-  useEffect(() => {
-    void dispatch(thunkGetFirm());
-  }, []);
+
   return (
     <div
       style={{

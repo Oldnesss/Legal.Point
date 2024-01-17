@@ -7,8 +7,14 @@ import FirmsPage from './components/pages/FirmsPage';
 import ServicePage from './components/pages/ServicePage';
 import ContactPage from './components/pages/ContactPage';
 import Footer from './components/ui/Footer';
+import { useAppDispatch } from './redux/hooks';
+import { thunkGetFirm } from './redux/slices/posts/postThunk';
 
 function App(): JSX.Element {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    void dispatch(thunkGetFirm());
+  }, []);
   return (
     <div className="container">
       <NavBar />

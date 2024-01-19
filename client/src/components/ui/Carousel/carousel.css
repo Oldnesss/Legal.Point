@@ -94,15 +94,27 @@ body {
 
 .button-group {
   display: flex;
-  justify-content: center;
-  margin-top: 30px;
+  justify-content: space-between;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  bottom: -540px;
+  /* background-color: red; Исправленное свойство */
 }
 
-.button-group > * {
+
+/* .button-group > * {
   height: 32px;
   width: 77px;
   border: none;
-}
+  
+} */
+
+/* .button__left {
+  position: absolute;
+  left: 0;
+
+} */
 
 /* .button-group button {
   background-color: #060606;

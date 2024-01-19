@@ -42,8 +42,8 @@ function Carousel(): JSX.Element {
           />
         ))}
       </Center>
-      <Center className="button-group">
-        <Button
+      <Box className="button-group">
+        <Button className='button__left'
           type="button"
           variant="solid"
           colorScheme="gray"
@@ -53,7 +53,7 @@ function Carousel(): JSX.Element {
           <ChevronLeftIcon />
         </Button>
 
-        <Button
+        <Button className='button__right'
           type="button"
           variant="solid"
           colorScheme="gray"
@@ -62,7 +62,7 @@ function Carousel(): JSX.Element {
         >
           <ChevronRightIcon />
         </Button>
-      </Center>
+      </Box>
     </>
   );
 }

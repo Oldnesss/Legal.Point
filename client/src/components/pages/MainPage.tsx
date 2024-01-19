@@ -19,24 +19,24 @@ function MainPage(): JSX.Element {
     <>
       {/* Экран с баннером */}
       <Box
-        // bg="url('/banner4.webp') center/cover no-repeat"
-        h="100vh"
-        // position="relative"
-        // // position="absolute"
-        top="0"
-        left="0"
-        right="0"
-        // zIndex="-1"
+      // bg="url('/banner4.webp') center/cover no-repeat"
+      // h="100vh"
+      // position="relative"
+      // // position="absolute"
+      // top="0"
+      // left="0"
+      // right="0"
+      // zIndex="-1"
       >
         <VideoBanner />
-        <Box
+        {/* <Box
           position="absolute"
           top="50%"
           left="50%"
           transform="translate(-50%, -50%)"
           textAlign="center"
-        >
-          {/* <Link as={ReactRouterLink} to="/firms">
+        > */}
+        {/* <Link as={ReactRouterLink} to="/firms">
             <Heading fontSize="4xl" color="white" mb="4">
               Привет, мы здесь, чтобы помочь!
             </Heading>
@@ -47,36 +47,36 @@ function MainPage(): JSX.Element {
               Посмотреть фирмы
             </Button>
           </Link> */}
-        </Box>
+        {/* </Box> */}
         {/* Дополнительные элементы UI, такие как прозрачная подложка, кнопки с надписями и анимации */}
+
+        {/* Навигационная панель */}
+        <Flex align="center" justify="space-between" padding="1rem">
+          {/* Логотип и другие элементы */}
+          <Spacer />
+        </Flex>
+
+        {/* Второй экран с каруселью и контактной информацией */}
+        {/* <Container maxW="1280px"> */}
+        <Heading mt="8" mb="4">
+          Сейчас в продаже
+        </Heading>
+        <Carousel />
+
+        <Link as={ReactRouterLink} to="/services">
+          <Button
+            variant="outline"
+            colorScheme="orange"
+            _hover={{ bg: 'orange.400', color: 'white' }}
+          >
+            Посмотреть фирмы
+          </Button>
+        </Link>
+
+        {/* Компонент с каруселью фирм в продаже */}
+        {/* Другие элементы UI, такие как контактная информация и кнопка для получения консультации */}
+        {/* </Container> */}
       </Box>
-
-      {/* Навигационная панель */}
-      <Flex align="center" justify="space-between" padding="1rem">
-        {/* Логотип и другие элементы */}
-        <Spacer />
-      </Flex>
-
-      {/* Второй экран с каруселью и контактной информацией */}
-      {/* <Container maxW="1280px"> */}
-      <Heading mt="8" mb="4">
-        Сейчас в продаже
-      </Heading>
-      <Carousel />
-
-      <Link as={ReactRouterLink} to="/services">
-        <Button
-          variant="outline"
-          colorScheme="orange"
-          _hover={{ bg: 'orange.400', color: 'white' }}
-        >
-          Посмотреть фирмы
-        </Button>
-      </Link>
-
-      {/* Компонент с каруселью фирм в продаже */}
-      {/* Другие элементы UI, такие как контактная информация и кнопка для получения консультации */}
-      {/* </Container> */}
     </>
   );
 }

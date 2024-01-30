@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import { ArrowForwardIcon, ArrowBackIcon, ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
+import {
+  ArrowForwardIcon,
+  ArrowBackIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from '@chakra-ui/icons';
 import { Box, Button, Center } from '@chakra-ui/react';
 import { useAppSelector } from '../../../redux/hooks';
 
@@ -23,6 +28,14 @@ function Carousel(): JSX.Element {
   const nextIndex = (activeIndex + 1) % firms.length;
   const prevIndex = (activeIndex - 1 + firms.length) % firms.length;
 
+  const handleNext = () => {
+    setActiveIndex(nextIndex);
+  };
+
+  const handlePrev = () => {
+    setActiveIndex(prevIndex);
+  };
+
   return (
     <>
       <Box
@@ -39,11 +52,14 @@ function Carousel(): JSX.Element {
             key={i}
             className={`dot ${activeIndex === i ? 'active' : ''}`}
             onClick={() => setActiveIndex(i)}
+            onPrev={handlePrev}
+            onNext={handleNext}
           />
         ))}
       </Center>
       <Box className="button-group">
-        <Button className='button__left'
+        <Button
+          className="button__left"
           type="button"
           variant="solid"
           colorScheme="gray"
@@ -53,7 +69,8 @@ function Carousel(): JSX.Element {
           <ChevronLeftIcon />
         </Button>
 
-        <Button className='button__right'
+        <Button
+          className="button__right"
           type="button"
           variant="solid"
           colorScheme="gray"

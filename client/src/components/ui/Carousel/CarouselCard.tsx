@@ -1,8 +1,25 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
 
+type Firm = {
+  id: string;
+  title: string;
+  image: string;
+};
 
-function CarouselCard({ active, firm }): JSX.Element {
+type CarouselCardProps = {
+  active: boolean;
+  firm: Firm;
+  onPrev: () => void; // Функция для переключения на предыдущий слайд
+  onNext: () => void; // Функция для переключения на следующий слайд
+};
+
+function CarouselCard({
+  active,
+  firm,
+  onPrev,
+  onNext,
+}: CarouselCardProps): JSX.Element {
   return (
     <Box className={`carousel-card ${active ? 'active' : ''}`}>
       {/* Используйте firm для отображения данных */}
@@ -10,6 +27,7 @@ function CarouselCard({ active, firm }): JSX.Element {
         className="carousel-card-content"
         bg={`url(${firm.image})`}
         position="relative"
+        onClick={onNext} // Перелистнуть на следующий слайд при клике на картинку
       >
         <Box
           position="absolute"
@@ -19,6 +37,7 @@ function CarouselCard({ active, firm }): JSX.Element {
           height="100%"
           backgroundColor="rgba(0, 0, 0, 0.5)" // Измените цвет маски по вашему вкусу
           zIndex="1"
+          onClick={onPrev} // Перелистнуть на предыдущий слайд при клике на маску
         />
         <Box
           className="carousel-card-title"

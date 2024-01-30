@@ -26,7 +26,6 @@ import {
   FaTelegram,
   FaTelegramPlane,
   FaWhatsapp,
-
 } from 'react-icons/fa';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import ThemeSwitch from './ThemeSwitch';
@@ -82,7 +81,11 @@ function NavBar(): JSX.Element {
         {/* Логотип */}
         <Link href="/">
           <Image
-            src={colorMode === 'dark' ? '/Legal.Point.png' : '/Legal.Point.png'}
+            src={
+              colorMode === 'dark'
+                ? '/legal-point-whte+.svg'
+                : '/legal-point-blk+.svg'
+            }
             alt="logo"
             w={300}
           />
@@ -236,6 +239,31 @@ function NavBar(): JSX.Element {
             bg: 'transparent', // Устанавливаем фон при наведении на прозрачный
           }}
         />
+
+        <ChakraLink
+          as={ReactRouterLink}
+          // to="/firms"
+          fontSize="lg"
+          px={5}
+          py={2}
+          rounded="mg"
+          fontWeight="bold"
+          onClick={() => {
+            window.location.href = 'tel:+79175131735';
+          }}
+          _hover={{
+            textDecoration: 'none',
+            //   border: '2px solid',
+            //   borderColor: 'orange.500',
+            // }}
+            // _active={{
+            //   textDecoration: 'none',
+            //   border: '2px solid',
+            //   borderColor: 'yellow.300',
+          }}
+        >
+          +79175131735
+        </ChakraLink>
 
         {/* Бургер-меню */}
         <IconButton

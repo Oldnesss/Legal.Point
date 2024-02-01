@@ -1,24 +1,10 @@
-/* carousel-styles.css */
-
-/* html, body, #app {
-  height: 100vh;
-} */
-
-body {
-  /* margin: 0; */
+/* body {
   overflow-x: hidden;
-  /* background-color: #222326; */
-}
-
-/* #app {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
 } */
 
 .carousel {
   display: flex;
-  transition: all 0.35s ease 0s;
+  transition: all 0.35s ease;
 }
 
 .carousel-card {
@@ -32,27 +18,17 @@ body {
   width: 100%;
   height: 100%;
   background-size: cover;
-  transition: transform 0.6s cubic-bezier(.165,.84,.44,1);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .carousel-card:not(.active) .carousel-card-content {
   transform: scale(0.9);
   filter: blur(5px);
 }
-
-.carousel-card.active .carousel-card-title {
-  opacity: 1;
-  transform: translateY(-50%);
-  
+.carousel-card-content:hover {
+  cursor: pointer;
 }
-
-.carousel-card:not(.active) .carousel-card-title {
-  opacity: 0;
-  transform: translateY(-30%);
-}
-
 .carousel-card-title {
-  font-family: 'Roboto, sans-serif';
   margin-left: 50px;
   position: relative;
   color: #e5e5e5;
@@ -63,6 +39,15 @@ body {
   transition: all 0.8s ease 0.3s;
 }
 
+.carousel-card.active .carousel-card-title {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.carousel-card:not(.active) .carousel-card-title {
+  opacity: 0;
+  transform: translateY(-30%);
+}
 
 .dots {
   display: flex;
@@ -95,38 +80,19 @@ body {
 .button-group {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  left: 0;
+  width: 97%;
   position: absolute;
+  left: 0;
   bottom: -540px;
-  /* background-color: red; Исправленное свойство */
+  transform: translateX(0.5%);
 }
-
-
-/* .button-group > * {
-  height: 32px;
-  width: 77px;
-  border: none;
-  
-} */
-
-/* .button__left {
-  position: absolute;
-  left: 0;
-
-} */
-
-/* .button-group button {
-  background-color: #060606;
-  color: #e5e5e5;
-} */
 
 .button-group button:hover {
   cursor: pointer;
 }
 
 .button-group button:disabled {
-  opacity: 0.5;
+  /* opacity: 0.5; */
 }
 
 .button-group button:first-child {

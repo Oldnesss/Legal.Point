@@ -13,8 +13,8 @@ import './carousel.css';
 import CarouselCard from './CarouselCard';
 
 function Carousel(): JSX.Element {
-  const firms = useAppSelector((store) => store.firmSlice.firms);
   const [activeIndex, setActiveIndex] = useState(0);
+  const firms = useAppSelector((store) => store.firmSlice.firms);
   // useEffect(() => {
   //   // Проверяем, что у нас есть карточки и активный индекс не выходит за пределы массива
   //   if (firms.length > 0) {
@@ -28,11 +28,11 @@ function Carousel(): JSX.Element {
   const nextIndex = (activeIndex + 1) % firms.length;
   const prevIndex = (activeIndex - 1 + firms.length) % firms.length;
 
-  const handleNext = () => {
+  const handleNext = (): void => {
     setActiveIndex(nextIndex);
   };
 
-  const handlePrev = () => {
+  const handlePrev = (): void => {
     setActiveIndex(prevIndex);
   };
 
@@ -43,7 +43,13 @@ function Carousel(): JSX.Element {
         transform={`translateX(${-(activeIndex * 50)}%)`}
       >
         {firms.map((firm, i) => (
-          <CarouselCard key={firm.id} active={activeIndex === i} firm={firm} />
+          <CarouselCard
+            key={firm.id}
+            active={activeIndex === i}
+            firm={firm}
+            onPrev={handlePrev}
+            onNext={handleNext}
+          />
         ))}
       </Box>
       <Center className="dots">
@@ -52,8 +58,6 @@ function Carousel(): JSX.Element {
             key={i}
             className={`dot ${activeIndex === i ? 'active' : ''}`}
             onClick={() => setActiveIndex(i)}
-            onPrev={handlePrev}
-            onNext={handleNext}
           />
         ))}
       </Center>
@@ -64,7 +68,7 @@ function Carousel(): JSX.Element {
           variant="solid"
           colorScheme="gray"
           disabled={activeIndex === 0}
-          onClick={() => setActiveIndex(prevIndex)}
+          onClick={handlePrev}
         >
           <ChevronLeftIcon />
         </Button>
@@ -75,7 +79,7 @@ function Carousel(): JSX.Element {
           variant="solid"
           colorScheme="gray"
           disabled={activeIndex === firms.length - 1}
-          onClick={() => setActiveIndex(nextIndex)}
+          onClick={handleNext}
         >
           <ChevronRightIcon />
         </Button>

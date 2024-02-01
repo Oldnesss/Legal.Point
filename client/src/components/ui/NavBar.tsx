@@ -87,7 +87,9 @@ function NavBar(): JSX.Element {
                 : '/legal-point-blk+.svg'
             }
             alt="logo"
-            w={300}
+            max-width="100px"
+            width="100%"
+            height="auto"
           />
         </Link>
         <Spacer />

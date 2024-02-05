@@ -15,7 +15,7 @@ function VideoBanner(): JSX.Element {
   const { colorMode } = useColorMode();
 
   return (
-    <Box position="relative" mt="100px">
+    <Box position="relative"  >
       {/* Видео в качестве фона */}
       <Box
         bg="url('/banner.webp') center/cover no-repeat"
@@ -33,7 +33,7 @@ function VideoBanner(): JSX.Element {
           muted
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         >
-          <source src="/video2.mp4" type="video/mp4" />
+          <source src="/video0.mp4" type="video/mp4" />
           {/* Добавьте другие форматы видео для кросс-браузерной совместимости */}
         </video>
       </Box>
@@ -106,4 +106,4 @@ function VideoBanner(): JSX.Element {
   );
 }
 
-export default VideoBanner;
+export default React.memo(VideoBanner);

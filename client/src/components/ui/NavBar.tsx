@@ -74,21 +74,36 @@ function NavBar(): JSX.Element {
         width="100%"
         top="0"
         left="0"
-        zIndex="1000"
-        transform={isScrolled ? 'translateY(0)' : 'none'} // Условное применение transform
-        backgroundColor={colorMode === 'dark' ? 'gray.800' : 'white'} // Цвет фона
+        right="0"
+        zIndex="99"
+        backgroundColor={
+          isScrolled
+            ? colorMode === 'dark'
+              ? 'gray.800'
+              : 'white'
+            : 'transparent'
+        }
+        boxShadow={isScrolled ? 'md' : 'none'}
+        transition="background-color 0.3s, box-shadow 0.3s"
+        color={
+          isScrolled ? (colorMode === 'dark' ? 'white' : 'gray.800') : 'white'
+        }
       >
         {/* Логотип */}
         <Link href="/">
           <Image
             src={
               colorMode === 'dark'
-                ? '/legal-point-whte+.svg'
-                : '/legal-point-blk+.svg'
+                ? isScrolled
+                  ? '/legal-point-whte+.png' // Если тема темная и страница прокручена
+                  : '/legal-point-whte+.png' // Если тема темная и страница не прокручена
+                : isScrolled
+                ? '/legal-point-blk+.png' // Если тема светлая и страница не прокручена
+                : '/legal-point-whte+.png' // Если тема светлая и страница прокручена
             }
             alt="logo"
-            max-width="100px"
-            width="100%"
+            minWidth="200px"
+            width="200px"
             height="auto"
           />
         </Link>
@@ -212,8 +227,8 @@ function NavBar(): JSX.Element {
         </InputRightElement>
       </InputGroup> */}
 
-        <Spacer />
-        <ThemeSwitch />
+        {/* <Spacer /> */}
+        {/* <ThemeSwitch /> */}
         <Spacer />
 
         <IconButton
@@ -221,7 +236,7 @@ function NavBar(): JSX.Element {
           aria-label="Telegram"
           display={['none', 'none', 'block']}
           fontSize="32px"
-          colorScheme="blue"
+          colorScheme="blue.200"
           variant="ghost"
           onClick={handleTelegramClick}
           _hover={{
@@ -234,7 +249,7 @@ function NavBar(): JSX.Element {
           aria-label="WhatsApp"
           display={['none', 'none', 'block']}
           fontSize="32px"
-          colorScheme="green"
+          colorScheme="green.200"
           variant="ghost"
           onClick={handleWhatsappClick}
           _hover={{

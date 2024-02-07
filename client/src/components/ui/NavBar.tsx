@@ -66,16 +66,17 @@ function NavBar(): JSX.Element {
         as="nav"
         align="center"
         justify="space-between"
-        padding="1rem"
+        padding="1rem 2rem 1rem"
         transition="transform 0.4s"
         borderBottom={isScrolled ? '1px solid' : 'none'} // Условное применение border
         borderColor={colorMode === 'dark' ? 'gray.700' : 'gray.200'}
         position="fixed"
         width="100%"
+        max-width="1980px"
         top="0"
         left="0"
         right="0"
-        zIndex="99"
+        zIndex="999"
         backgroundColor={
           isScrolled
             ? colorMode === 'dark'
@@ -110,8 +111,8 @@ function NavBar(): JSX.Element {
         <Spacer />
 
         {/* Навигационные ссылки */}
-        <div className="navbar4ik">
-          <Flex align="center" justify="center" flex="1">
+        <div className="nav__link">
+          <Flex align="center" justify="center" flex="1" padding='0 3rem 0'>
             <Box display={['none', 'none', 'flex']} gap="1rem">
               <ChakraLink
                 as={ReactRouterLink}

@@ -91,7 +91,7 @@ function Footer(): JSX.Element {
         </Box>
 
         <Box>
-          <Flex direction="column">
+          <Flex direction="column" padding="0 1rem 0 0">
             <HStack spacing="2">
               {/* Telegram */}
               <Link href="https://t.me/" isExternal>

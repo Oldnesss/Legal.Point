@@ -7,7 +7,41 @@
   flex-direction: column;
   /* position: relative; */
   min-height: 100svh; /* small viewport height */
+}
 
+.nav__button_tel, .button {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  background-color: rgb(255, 99, 71);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.nav__button_tel:before, .button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5em;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: translateX(-4em) skewX(-45deg);
+}
+
+.nav__button_tel:hover:before {
+  animation: move-light 0.5s;
+}
+
+@keyframes move-light {
+  from {
+    transform: translateX(-4em) skewX(-45deg);
+  }
+  to {
+    transform: translateX(10em) skewX(-45deg);
+  }
 }
 
 /* .main {

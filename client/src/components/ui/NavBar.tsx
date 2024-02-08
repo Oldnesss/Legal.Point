@@ -67,7 +67,7 @@ function NavBar(): JSX.Element {
         align="center"
         justify="space-between"
         padding="1rem 2rem 1rem"
-        transition="transform 0.4s"
+        // transition="transform 0.4s"
         borderBottom={isScrolled ? '1px solid' : 'none'} // Условное применение border
         borderColor={colorMode === 'dark' ? 'gray.700' : 'gray.200'}
         position="fixed"
@@ -109,10 +109,15 @@ function NavBar(): JSX.Element {
           />
         </Link>
         <Spacer />
-
         {/* Навигационные ссылки */}
         <div className="nav__link">
-          <Flex align="center" justify="center" flex="1" padding='0 3rem 0'>
+          <Flex
+            align="center"
+            justify="center"
+            flex="1"
+            // padding="0 3rem 0"
+            transform="translateX(20px)"
+          >
             <Box display={['none', 'none', 'flex']} gap="1rem">
               <ChakraLink
                 as={ReactRouterLink}
@@ -260,24 +265,28 @@ function NavBar(): JSX.Element {
 
         <ChakraLink
           as={ReactRouterLink}
+          className='nav__button_tel'
           // to="/firms"
           fontSize="lg"
           px={5}
           py={2}
           rounded="mg"
           fontWeight="bold"
+          border="1px solid"
+          borderRadius="0.375rem"
           onClick={() => {
             window.location.href = 'tel:+79175131735';
           }}
           _hover={{
             textDecoration: 'none',
-            //   border: '2px solid',
+            // border: '2px solid',
             //   borderColor: 'orange.500',
             // }}
             // _active={{
             //   textDecoration: 'none',
             //   border: '2px solid',
             //   borderColor: 'yellow.300',
+            
           }}
         >
           +79175131735

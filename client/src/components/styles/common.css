@@ -1,5 +1,5 @@
 .container {
-  max-width: 1980px;
+  max-width: 1780px;
   margin: 0 auto;
   padding: 0 1rem;
   /* min-width: 100%; */
@@ -11,13 +11,19 @@
 
 .nav__button_tel, .button {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   background-color: rgb(255, 99, 71);
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
   overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  min-width: 140px;
+  min-height: 40px;
+  
 }
 
 .nav__button_tel:before, .button:before {
@@ -42,6 +48,13 @@
   to {
     transform: translateX(10em) skewX(-45deg);
   }
+}
+.custom-button{
+
+  /* position: fixed; */
+  /* top: 0; */
+  /* right: 0; */
+  /* z-index: 998; */
 }
 
 /* .main {

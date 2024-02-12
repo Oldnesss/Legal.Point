@@ -243,6 +243,7 @@ function NavBar(): JSX.Element {
           display={['none', 'none', 'block']}
           fontSize="32px"
           colorScheme="blue.200"
+          marginLeft="0.5rem"
           variant="ghost"
           onClick={handleTelegramClick}
           _hover={{
@@ -262,15 +263,15 @@ function NavBar(): JSX.Element {
             bg: 'transparent', // Устанавливаем фон при наведении на прозрачный
           }}
         />
-
+        {/* <div className="custom-button"> */}
         <ChakraLink
           as={ReactRouterLink}
-          className='nav__button_tel'
+          className="nav__button_tel"
           // to="/firms"
           fontSize="lg"
           px={5}
           py={2}
-          rounded="mg"
+          // rounded="mg"
           fontWeight="bold"
           border="1px solid"
           borderRadius="0.375rem"
@@ -286,17 +287,18 @@ function NavBar(): JSX.Element {
             //   textDecoration: 'none',
             //   border: '2px solid',
             //   borderColor: 'yellow.300',
-            
           }}
         >
           +79175131735
         </ChakraLink>
+        {/* </div> */}
 
         {/* Бургер-меню */}
         <IconButton
           icon={<HamburgerIcon />}
           aria-label="Открыть меню"
           display={['block', 'block', 'none']}
+          margin="0 0 0 1rem"
           onClick={handleDrawerToggle}
         />
 

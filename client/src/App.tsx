@@ -9,6 +9,7 @@ import ContactPage from './components/pages/ContactPage';
 import Footer from './components/ui/Footer';
 import { useAppDispatch } from './redux/hooks';
 import { thunkGetFirm } from './redux/slices/posts/postThunk';
+import NotFoundPage from './components/pages/NotFoundPage';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -23,6 +24,7 @@ function App(): JSX.Element {
         <Route path="/firms" element={<FirmsPage />} />
         <Route path="/service" element={<ServicePage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
 
       <Footer />

@@ -14,9 +14,11 @@ module.exports = (sequelize, DataTypes) => {
   Firm.init(
     {
       name: DataTypes.STRING,
+      nameIFNS: DataTypes.STRING,
       image: DataTypes.STRING,
       title: DataTypes.STRING,
       description: DataTypes.STRING,
+      price: DataTypes.STRING,
       body: DataTypes.TEXT,
     },
     {

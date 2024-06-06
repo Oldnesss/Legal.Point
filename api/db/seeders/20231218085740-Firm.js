@@ -9,10 +9,12 @@ module.exports = {
     const firmData = [];
     for (let i = 1; i <= 20; i++) {
       firmData.push({
-        name: faker.company.name(),
+        name: faker.company.buzzAdjective(),
+        nameIFNS: faker.finance.creditCardCVV(),
         image: faker.image.urlPicsumPhotos(),
-        title: faker.company.name(),
+        title: faker.company.buzzNoun(),
         description: faker.company.catchPhrase(),
+        price: faker.finance.accountNumber(5),
         body: faker.company.catchPhraseDescriptor(),
         createdAt: new Date(),
         updatedAt: new Date(),

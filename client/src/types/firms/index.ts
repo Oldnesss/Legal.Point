@@ -1,9 +1,11 @@
 export type FirmType = {
   id: number;
   name: string;
+  nameIFNS: string;
   image: string;
   title: string;
   description: string;
+  price: string;
   body: string;
   // createdAt: Date;
   // updatedAt: Date;
@@ -11,10 +13,11 @@ export type FirmType = {
 
 export type PostFirmFormDataType = {
   name: string;
+  nameIFNS: string;
   image: string;
   title: string;
   description: string;
-  body: string;
+  price: string;
 };
 
 export type FirmState = {

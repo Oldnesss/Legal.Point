@@ -1,0 +1,36 @@
+ИФНС №
+Наименование
+Дата создания
+Система налогообложения
+Обороты, сведения 
+Стоимость
+
+name: {
+        type: Sequelize.STRING,
+      },
+      nameIFNS: {
+        type: Sequelize.STRING,
+      },
+      image: {
+        type: Sequelize.STRING,
+      },
+      title: {
+        type: Sequelize.STRING,
+      },
+      description: {
+        type: Sequelize.STRING,
+      },
+      price: {
+        type: Sequelize.STRING,
+      },
+      body: {
+        type: Sequelize.TEXT,
+      },
+
+      name: faker.company.name(),
+        nameIFNS: faker.finance.accountNumber(5),
+        image: faker.image.urlPicsumPhotos(),
+        title: faker.company.buzzNoun(),
+        description: faker.company.catchPhrase(),
+        price: faker.finance.routingNumber(6),
+        body: faker.company.catchPhraseDescriptor(),

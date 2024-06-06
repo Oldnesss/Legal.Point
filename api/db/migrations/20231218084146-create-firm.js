@@ -11,6 +11,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING,
       },
+      nameIFNS: {
+        type: Sequelize.STRING,
+      },
       image: {
         type: Sequelize.STRING,
       },
@@ -18,6 +21,9 @@ module.exports = {
         type: Sequelize.STRING,
       },
       description: {
+        type: Sequelize.STRING,
+      },
+      price: {
         type: Sequelize.STRING,
       },
       body: {

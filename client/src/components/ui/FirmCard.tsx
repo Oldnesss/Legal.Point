@@ -23,11 +23,11 @@ function FirmCard({ firm }: FirmTypeProps): JSX.Element {
       width="350px"
       height="500px"
       className="card"
-      mb={10}
+      mb={5}
       bg="rgba(255, 255, 255, 0.1)"
     >
       <CardBody>
-        <Box p={8} align="center">
+        <Box p={4} align="center">
           <Image
             mb={6}
             src={firm.image}
@@ -36,14 +36,20 @@ function FirmCard({ firm }: FirmTypeProps): JSX.Element {
             height="200px"
             objectFit="cover"
           />
-          <Heading as="h3" size="md" mb={6}>
+          <Heading as="h3" size="md" mb={4}>
             {firm.name}
           </Heading>
-          <Text fontWeight="semibold" mb={2}>
+          <Text fontWeight="semibold" mb={1}>
+            {firm.nameIFNS}
+          </Text>
+          <Text fontWeight="semibold" mb={1}>
             {firm.title}
           </Text>
-          <Text color="gray.500" mb={4}>
+          <Text color="gray.500" mb={2}>
             {firm.description}
+          </Text>
+          <Text color="gray.500" mb={2}>
+            {firm.price}
           </Text>
           <VStack spacing={4} align="stretch">
             <Text>{firm.body}</Text>

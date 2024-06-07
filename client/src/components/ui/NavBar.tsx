@@ -160,7 +160,28 @@ function NavBar(): JSX.Element {
               //   borderColor: 'yellow.300',
               // }}
             >
-              КАТАЛОГ
+              КУПИТЬ
+            </ChakraLink>
+            <ChakraLink
+              className="nav__link"
+              as={ReactRouterLink}
+              to="/sale"
+              fontSize="md"
+              px={5}
+              py={2}
+              rounded="md"
+              _hover={{
+                textDecoration: 'none',
+                //   border: '2px solid',
+                //   borderColor: 'orange.500',
+              }}
+              // _active={{
+              //   textDecoration: 'none',
+              //   border: '2px solid',
+              //   borderColor: 'yellow.300',
+              // }}
+            >
+              ПРОДАТЬ
             </ChakraLink>
             <ChakraLink
               className="nav__link"
@@ -337,7 +358,14 @@ function NavBar(): JSX.Element {
                   to="/firms"
                   _hover={{ textDecoration: 'none' }}
                 >
-                  КАТАЛОГ
+                  КУПИТЬ
+                </ChakraLink>
+                <ChakraLink
+                  as={ReactRouterLink}
+                  to="/sale"
+                  _hover={{ textDecoration: 'none' }}
+                >
+                  ПРОДАТЬ
                 </ChakraLink>
                 <ChakraLink
                   as={ReactRouterLink}

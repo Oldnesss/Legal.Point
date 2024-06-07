@@ -10,6 +10,7 @@ import Footer from './components/ui/Footer';
 import { useAppDispatch } from './redux/hooks';
 import { thunkGetFirm } from './redux/slices/posts/postThunk';
 import NotFoundPage from './components/pages/NotFoundPage';
+import SalePage from './components/pages/salePage';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -22,6 +23,7 @@ function App(): JSX.Element {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/firms" element={<FirmsPage />} />
+        <Route path="/sale" element={<SalePage />} />
         <Route path="/service" element={<ServicePage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<NotFoundPage />} />

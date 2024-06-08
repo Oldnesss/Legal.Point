@@ -15,6 +15,7 @@ import {
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import axios from 'axios';
 
 const schema = yup.object().shape({
   name: yup.string().required('Это поле обязательно'),
@@ -51,9 +52,23 @@ export default function SalePage(): JSX.Element {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data: any) => {
-    console.log(data);
-    // добавить обработку отправки данных
+  // const dispatch = useDispatch();
+  // const emailState = useSelector((state: RootState) => state.email);
+
+  // const onSubmit: SubmitHandler<FormValues> = (data) => {
+  //   dispatch(thunkSendEmail(data));
+  // };
+
+  const onSubmit = async (data: any) => {
+    try {
+      const response = await axios.post(
+        'http://localhost:3001/api/send-email',
+        data,
+      );
+      console.log('Email sent:', response.data);
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
   };
 
   return (

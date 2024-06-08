@@ -4,6 +4,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 require('dotenv/config');
 const apiFirmRouter = require('./routes/apiFirmRouter');
+const apiMailRouter = require('./routes/apiMainRouter');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -20,7 +21,7 @@ app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(express.json());
 
-
 app.use('/api/firm', apiFirmRouter);
+app.use('/api/send-email', apiMailRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

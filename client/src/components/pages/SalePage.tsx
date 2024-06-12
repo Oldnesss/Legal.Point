@@ -52,6 +52,7 @@ export default function SalePage(): JSX.Element {
     resolver: yupResolver(schema),
   });
 
+
   // const dispatch = useDispatch();
   // const emailState = useSelector((state: RootState) => state.email);
 

@@ -6,7 +6,6 @@ import {
   Button,
   useColorMode,
   Text,
-  Link,
   Link as ChakraLink,
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
@@ -15,7 +14,7 @@ function VideoBanner(): JSX.Element {
   const { colorMode } = useColorMode();
 
   return (
-    <Box position="relative"  >
+    <Box position="relative">
       {/* Видео в качестве фона */}
       <Box
         bg="url('/banner.webp') center/cover no-repeat"
@@ -52,56 +51,74 @@ function VideoBanner(): JSX.Element {
       />
 
       {/* Контент баннера */}
-      <Link
-        as={ReactRouterLink}
-        to="/service"
-        _hover={{ textDecoration: 'none' }}
+      <Flex
+        direction="column"
+        align="center"
+        justify="center"
+        height="100vh"
+        color="white"
+        zIndex="1"
+        textAlign="center"
       >
-        <Flex
-          direction="column"
-          align="center"
-          justify="center"
-          height="100vh"
-          color="white"
-          zIndex="1"
+        <Heading
+          as="h1"
+          fontSize={{ base: '3xl', md: '4xl', lg: '6xl' }}
+          mb="6"
         >
-          <Heading
-            as="h1"
-            fontSize={{ base: '3xl', md: '4xl', lg: '6xl' }}
-            textAlign="center"
-            mb="6"
-          >
-            Привет, мы здесь, чтобы помочь!
-          </Heading>
+          Привет, мы здесь, чтобы помочь!
+        </Heading>
 
-          <Text
-            color="white"
-            fontSize={{ base: 'sm', md: 'md', lg: '2xl' }}
-            mb="6"
-            p="30px"
+        <Text
+          color="white"
+          fontSize={{ base: 'sm', md: 'md', lg: '2xl' }}
+          mb="6"
+          px="30px"
+        >
+          Юридическое сопровождение и многое другое...
+        </Text>
+
+        {/* Кнопки */}
+        <Flex direction={{ base: 'column', md: 'row' }} gap={4} mt={4}>
+          <ChakraLink
+            as={ReactRouterLink}
+            to="/sale"
+            _hover={{ textDecoration: 'none' }}
           >
-            Юридическое сопровождение и многое другое...
-          </Text>
-          <Button
-            colorScheme="orange"
-            size={{ base: 'sm', md: 'md', lg: 'lg' }}
-            mt={4}
-            // _focus={{
-            //   content: '""',
-            //   position: 'absolute',
-            //   top: '0',
-            //   left: '0',
-            //   width: '200%',
-            //   height: '100%',
-            //   background:
-            //     'linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b)',
-            //   backgroundSize: '50% 100%',
-            // }}
+            <Button
+              colorScheme="orange"
+              size={{ base: 'sm', md: 'md', lg: 'lg' }}
+            >
+              ПРОДАТЬ
+            </Button>
+          </ChakraLink>
+
+          <ChakraLink
+            as={ReactRouterLink}
+            to="/service"
+            _hover={{ textDecoration: 'none' }}
           >
-            НАШИ УСЛУГИ
-          </Button>
+            <Button
+              colorScheme="orange"
+              size={{ base: 'sm', md: 'md', lg: 'lg' }}
+            >
+              НАШИ УСЛУГИ
+            </Button>
+          </ChakraLink>
+
+          <ChakraLink
+            as={ReactRouterLink}
+            to="/firms"
+            _hover={{ textDecoration: 'none' }}
+          >
+            <Button
+              colorScheme="orange"
+              size={{ base: 'sm', md: 'md', lg: 'lg' }}
+            >
+              КУПИТЬ
+            </Button>
+          </ChakraLink>
         </Flex>
-      </Link>
+      </Flex>
     </Box>
   );
 }

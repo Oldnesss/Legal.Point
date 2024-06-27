@@ -29,11 +29,11 @@ body {
   cursor: pointer;
 }
 .carousel-card-title {
-  margin-left: 50px;
+  margin-left: 80px;
   position: relative;
   color: #e5e5e5;
-  width: 250px;
-  top: 50%;
+  max-width: 100%;
+  top: 25%;
   font-size: 3.3rem;
   font-weight: 700;
   transition: all 0.8s ease 0.3s;
@@ -52,7 +52,8 @@ body {
 .dots {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
 
 .dot {
@@ -80,10 +81,10 @@ body {
 .button-group {
   display: flex;
   justify-content: space-between;
-  width: 97%;
+  width: 98%;
   position: absolute;
   left: 0;
-  bottom: -540px;
+  bottom: -445px;
   transform: translateX(0.5%);
 }
 
@@ -97,4 +98,101 @@ body {
 
 .button-group button:first-child {
   margin-right: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .carousel-card {
+    min-width: 50%;
+    width: 50%;
+    height: 600px;
+  }
+  
+  .carousel-card-content {
+    position: relative;
+    width: 198%;
+    height: 100%;
+    background-size: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  
+  .carousel-card:not(.active) .carousel-card-content {
+    transform: scale(0.9);
+    filter: blur(5px);
+    display: none;
+    /* visibility: hidden; */
+  }
+  .carousel-card-content:hover {
+    cursor: pointer;
+  }
+  .carousel-card-title {
+    margin-left: 80px;
+    position: relative;
+    color: #e5e5e5;
+    max-width: 100%;
+    top: 25%;
+    font-size: 3.3rem;
+    font-weight: 700;
+    transition: all 0.8s ease 0.3s;
+  }
+  
+  .carousel-card.active .carousel-card-title {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+  
+  .carousel-card:not(.active) .carousel-card-title {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+  
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .dot {
+    display: inline-block;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    margin-right: 10px;
+  }
+  
+  .dot:hover {
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #c9c9c9;
+  }
+  
+  .dot:not(.active) {
+    background-color: #545454;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    position: absolute;
+    left: 0;
+    bottom: -445px;
+    transform: translateX(0.5%);
+  }
+  
+  .button-group button:hover {
+    cursor: pointer;
+  }
+  
+  .button-group button:disabled {
+    /* opacity: 0.5; */
+  }
+  
+  .button-group button:first-child {
+    margin-right: 20px;
+  }
 }

@@ -6,37 +6,36 @@ import {
   Image,
   Card,
   CardBody,
-  Center,
+  Button,
 } from '@chakra-ui/react';
 import React from 'react';
 import type { FirmType } from '../../types/firms';
 
 type FirmTypeProps = {
   firm: FirmType;
+  onOpen: (firm: FirmType) => void; // Добавьте обработчик для открытия модального окна
 };
 
-function FirmCard({ firm }: FirmTypeProps): JSX.Element {
+function FirmCard({ firm, onOpen }: FirmTypeProps): JSX.Element {
   return (
-    // <Box borderWidth="1px" borderRadius="md" overflow="hidden">
     <Card
       maxW="sm"
       width="350px"
-      height="500px"
       className="card"
       mb={5}
       bg="rgba(255, 255, 255, 0.1)"
     >
-      <CardBody>
-        <Box p={4} align="center">
+      <CardBody height="100%" display="flex" flexDirection="column" justifyContent="space-between">
+        <Box>
           <Image
-            mb={6}
+            mb={4}
             src={firm.image}
             alt={firm.name}
             borderRadius="lg"
-            height="200px"
+            height="150px"
             objectFit="cover"
           />
-          <Heading as="h3" size="md" mb={4}>
+          <Heading as="h3" size="md" mb={2}>
             {firm.name}
           </Heading>
           <Text fontWeight="semibold" mb={1}>
@@ -55,9 +54,11 @@ function FirmCard({ firm }: FirmTypeProps): JSX.Element {
             <Text>{firm.body}</Text>
           </VStack>
         </Box>
+        <Button mt={4} colorScheme="orange" onClick={() => onOpen(firm)} width="100%" mb={2}>
+          Подробнее
+        </Button>
       </CardBody>
     </Card>
-    // </Box>
   );
 }
 

@@ -15,15 +15,6 @@ import CarouselCard from './CarouselCard';
 function Carousel(): JSX.Element {
   const [activeIndex, setActiveIndex] = useState(0);
   const firms = useAppSelector((store) => store.firmSlice.firms);
-  // useEffect(() => {
-  //   // Проверяем, что у нас есть карточки и активный индекс не выходит за пределы массива
-  //   if (firms.length > 0) {
-  //     // Делаем что-то с новыми данными или обновляем состояние
-  //     if (activeIndex < 0 || activeIndex >= firms.length) {
-  //       setActiveIndex(0);
-  //     }
-  //   }
-  // }, [firms, activeIndex]); // Зависимости, при изменении которых будет вызываться useEffect
 
   const nextIndex = (activeIndex + 1) % firms.length;
   const prevIndex = (activeIndex - 1 + firms.length) % firms.length;

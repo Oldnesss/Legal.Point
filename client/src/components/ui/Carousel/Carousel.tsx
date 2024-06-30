@@ -1,20 +1,20 @@
-import React, { useState, useEffect, useRef } from 'react';
+// src/components/ui/Carousel/Carousel.tsx
 
-import {
-  ArrowForwardIcon,
-  ArrowBackIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-} from '@chakra-ui/icons';
+import React, { useState } from 'react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { Box, Button, Center } from '@chakra-ui/react';
-import { useAppSelector } from '../../../redux/hooks';
+import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
 
 import './carousel.css';
 import CarouselCard from './CarouselCard';
+import FirmModal from '../FirmModal';
+import { closeModal, openModal } from '../../../redux/slices/modal/modalSlice';
 
 function Carousel(): JSX.Element {
   const [activeIndex, setActiveIndex] = useState(0);
   const firms = useAppSelector((store) => store.firmSlice.firms);
+  const { isOpen, selectedFirm } = useAppSelector((state) => state.modalSlice);
+  const dispatch = useAppDispatch();
 
   const nextIndex = (activeIndex + 1) % firms.length;
   const prevIndex = (activeIndex - 1 + firms.length) % firms.length;
@@ -25,6 +25,10 @@ function Carousel(): JSX.Element {
 
   const handlePrev = (): void => {
     setActiveIndex(prevIndex);
+  };
+
+  const handleCardClick = (firm): void => {
+    dispatch(openModal(firm));
   };
 
   return (
@@ -40,6 +44,7 @@ function Carousel(): JSX.Element {
             firm={firm}
             onPrev={handlePrev}
             onNext={handleNext}
+            onClick={() => handleCardClick(firm)} // Передаем обработчик клика
           />
         ))}
       </Box>
@@ -75,6 +80,13 @@ function Carousel(): JSX.Element {
           <ChevronRightIcon />
         </Button>
       </Box>
+      {selectedFirm && (
+        <FirmModal
+          firm={selectedFirm}
+          isOpen={isOpen}
+          onClose={() => dispatcd(closeModal())}
+        />
+      )}
     </>
   );
 }

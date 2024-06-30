@@ -1,3 +1,5 @@
+// src/components/ui/FirmModal.tsx
+
 import React from 'react';
 import {
   Modal,
@@ -11,36 +13,33 @@ import {
   Image,
   Text,
 } from '@chakra-ui/react';
-import type { FirmType } from '../../types/firms';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { closeModal } from '../../redux/slices/modal/modalSlice';
 
-type FirmModalProps = {
-  firm: FirmType | null;
-  isOpen: boolean;
-  onClose: () => void;
-};
+function FirmModal(): JSX.Element {
+  const dispatch = useAppDispatch();
+  const { isOpen, selectedFirm } = useAppSelector((state) => state.modalSlice);
 
-function FirmModal({ firm, isOpen, onClose }: FirmModalProps): JSX.Element {
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="full">
+    <Modal isOpen={isOpen} onClose={() => dispatch(closeModal())} size="full">
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>{firm?.name}</ModalHeader>
+        <ModalHeader>{selectedFirm?.name}</ModalHeader>
         <ModalCloseButton />
         <ModalBody overflowY="auto">
-          {firm && (
+          {selectedFirm && (
             <>
-              <Image src={firm.image} alt={firm.name} mb={4} />
-              <Text>{firm.nameIFNS}</Text>
-              <Text>{firm.title}</Text>
-              <Text>{firm.description}</Text>
-              <Text>{firm.price}</Text>
-              <Text>{firm.body}</Text>
-              {/* Add other fields as necessary */}
+              <Image src={selectedFirm.image} alt={selectedFirm.name} mb={4} />
+              <Text>{selectedFirm.nameIFNS}</Text>
+              <Text>{selectedFirm.title}</Text>
+              <Text>{selectedFirm.description}</Text>
+              <Text>{selectedFirm.price}</Text>
+              <Text>{selectedFirm.body}</Text>
             </>
           )}
         </ModalBody>
         <ModalFooter>
-          <Button colorScheme="orange" onClick={onClose}>
+          <Button colorScheme="orange" onClick={() => dispatch(closeModal())}>
             Закрыть
           </Button>
         </ModalFooter>

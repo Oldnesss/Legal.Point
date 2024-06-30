@@ -23,8 +23,8 @@ function FirmList(): JSX.Element {
           display: 'flex',
           flexWrap: 'wrap',
           justifyContent: 'space-between',
-          gap: '15px',
-          marginTop: '100px',
+          gap: '10px',
+          marginTop: '50px',
         }}
       >
         {firms.map((firm) => (

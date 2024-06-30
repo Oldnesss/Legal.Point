@@ -25,7 +25,12 @@ function FirmCard({ firm, onOpen }: FirmTypeProps): JSX.Element {
       mb={5}
       bg="rgba(255, 255, 255, 0.1)"
     >
-      <CardBody height="100%" display="flex" flexDirection="column" justifyContent="space-between">
+      <CardBody
+        height="100%"
+        display="flex"
+        flexDirection="column"
+        justifyContent="space-between"
+      >
         <Box>
           <Image
             mb={4}
@@ -54,7 +59,13 @@ function FirmCard({ firm, onOpen }: FirmTypeProps): JSX.Element {
             <Text>{firm.body}</Text>
           </VStack>
         </Box>
-        <Button mt={4} colorScheme="orange" onClick={() => onOpen(firm)} width="100%" mb={2}>
+        <Button
+          mt={4}
+          colorScheme="orange"
+          onClick={() => onOpen(firm)}
+          width="100%"
+          mb={2}
+        >
           Подробнее
         </Button>
       </CardBody>

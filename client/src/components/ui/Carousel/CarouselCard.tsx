@@ -1,3 +1,5 @@
+// src/components/ui/Carousel/CarouselCard.tsx
+
 import { Box } from '@chakra-ui/react';
 import React from 'react';
 
@@ -10,8 +12,9 @@ type Firm = {
 type CarouselCardProps = {
   active: boolean;
   firm: Firm;
-  onPrev: () => void; // Функция для переключения на предыдущий слайд
-  onNext: () => void; // Функция для переключения на следующий слайд
+  onPrev: () => void;
+  onNext: () => void;
+  onClick: () => void; // Добавить обработчик клика
 };
 
 function CarouselCard({
@@ -19,15 +22,17 @@ function CarouselCard({
   firm,
   onPrev,
   onNext,
+  onClick,
 }: CarouselCardProps): JSX.Element {
   return (
-    <Box className={`carousel-card ${active ? 'active' : ''}`}>
-      {/* Используйте firm для отображения данных */}
+    <Box
+      className={`carousel-card ${active ? 'active' : ''}`}
+      onClick={onClick}
+    >
       <Box
         className="carousel-card-content"
         bg={`url(${firm.image})`}
         position="relative"
-        onClick={onNext} // Перелистнуть на следующий слайд при клике на картинку
       >
         <Box
           position="absolute"
@@ -35,9 +40,9 @@ function CarouselCard({
           left="0"
           width="100%"
           height="100%"
-          backgroundColor="rgba(0, 0, 0, 0.5)" // Измените цвет маски по вашему вкусу
+          backgroundColor="rgba(0, 0, 0, 0.5)"
           zIndex="1"
-          onClick={onPrev} // Перелистнуть на предыдущий слайд при клике на маску
+          onClick={onPrev}
         />
         <Box
           className="carousel-card-title"

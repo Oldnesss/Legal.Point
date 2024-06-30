@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import firmReducer from './slices/posts/postSlice';
 import emailReducer from './slices/email/emailSlice';
+import modalReducer from './slices/modal/modalSlice';
 
 export const store = configureStore({
   reducer: {
     firmSlice: firmReducer,
     emailSlice: emailReducer,
+    modalSlice: modalReducer,
   },
 });
 

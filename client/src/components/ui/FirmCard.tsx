@@ -10,13 +10,20 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import type { FirmType } from '../../types/firms';
+import { useAppDispatch } from '../../redux/hooks';
+import { openModal } from '../../redux/slices/modal/modalSlice';
 
 type FirmTypeProps = {
   firm: FirmType;
-  onOpen: (firm: FirmType) => void; // Добавьте обработчик для открытия модального окна
 };
 
-function FirmCard({ firm, onOpen }: FirmTypeProps): JSX.Element {
+function FirmCard({ firm }: FirmTypeProps): JSX.Element {
+  const dispatch = useAppDispatch();
+
+  const handleOpenModal = (): void => {
+    dispatch(openModal(firm));
+  };
+
   return (
     <Card
       maxW="sm"
@@ -62,7 +69,7 @@ function FirmCard({ firm, onOpen }: FirmTypeProps): JSX.Element {
         <Button
           mt={4}
           colorScheme="orange"
-          onClick={() => onOpen(firm)}
+          onClick={handleOpenModal}
           width="100%"
           mb={2}
         >
